@@ -12,8 +12,7 @@ class MainScreen extends StatelessWidget {
         child: Row(
           children: const [
             Expanded(
-              // 默认 flex = 1
-              //占 1/6
+              // 默认 flex = 1 ，占1/6
               child: SizeMeun(),
             ),
             Expanded(
