@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'size_menu.dart';
+import 'main_screen/size_menu.dart';
 import 'package:flutter_application_1/screens/dashboard/dashboard_screen.dart';
 
 class MainScreen extends StatelessWidget {
@@ -10,6 +10,8 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Row(
+          // 标体内容 排布居上
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Expanded(
               // 默认 flex = 1 ，占1/6

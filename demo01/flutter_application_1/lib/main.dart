@@ -22,8 +22,10 @@ class MyApp extends StatelessWidget {
       // 使用深色主题 ，其中部分属性通过copyWith覆盖
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: bgColor,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: Colors.white, fontSizeDelta: 10),
+        textTheme:
+            GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(
+          bodyColor: Colors.white,
+        ),
         canvasColor: secondaryColor,
       ),
       home: const MainScreen(),
