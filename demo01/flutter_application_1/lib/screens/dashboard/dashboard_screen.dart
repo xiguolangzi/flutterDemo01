@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants.dart';
-import 'package:flutter_application_1/screens/dashboard/deshboard_screen/header/header.dart';
-import 'package:fl_chart/fl_chart.dart';
+
+import '../../constants.dart';
+import 'deshboard_screen/header/header.dart';
+import 'deshboard_screen/my_files/my_files.dart';
+import 'deshboard_screen/storage/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -13,49 +15,52 @@ class DashboardScreen extends StatelessWidget {
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
           children: [
+            // 顶部
             const Header(),
             const SizedBox(
               height: defaultPadding,
             ),
+            // 标体
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // 标体 - 左
                 Expanded(
                   flex: 5,
-                  child: Container(
-                    height: 500,
-                    color: Colors.white,
+                  child: Column(
+                    children: [
+                      // 标题栏
+                      const MyFiles(),
+                      const SizedBox(
+                        height: defaultPadding,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(defaultPadding),
+                        decoration: const BoxDecoration(
+                          color: secondaryColor,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        child: Text(
+                          "Recent Files",
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 const SizedBox(
                   width: defaultPadding,
                 ),
+                // 标体 - 右
                 Expanded(
                   flex: 2,
                   child: Container(
                     padding: const EdgeInsets.all(defaultPadding),
-                    height: 500,
                     decoration: const BoxDecoration(
                       color: secondaryColor,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    child: Column(
-                      children: [
-                        const Text(
-                          "Storage Details",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(
-                            height: 200,
-                            child: PieChart(
-                              PieChartData(sections: [
-                                PieChartSectionData(value: 15),
-                              ]),
-                            )),
-                      ],
-                    ),
+                    child: const StorageDetails(),
                   ),
                 )
               ],

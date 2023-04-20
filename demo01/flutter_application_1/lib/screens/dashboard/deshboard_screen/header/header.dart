@@ -11,13 +11,17 @@ class Header extends StatelessWidget {
       children: [
         Text(
           "dashboard",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge, //titleLarge 替换启用的headline6
         ),
         // 通过 Spacer 占据可用空间的比例 默认flex= 1
         const Spacer(
           flex: 2,
         ),
+        // 搜索输入框
         const Expanded(child: SearchField()),
+        // 人员选择
         const ProfileCard(),
       ],
     );
