@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../../constants.dart';
 import 'deshboard_screen/header/header.dart';
 import 'deshboard_screen/my_files/my_files.dart';
+import 'deshboard_screen/recent_files/recent_files.dart';
 import 'deshboard_screen/storage/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -28,23 +28,13 @@ class DashboardScreen extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Column(
-                    children: [
+                    children: const [
                       // 标题栏
-                      const MyFiles(),
-                      const SizedBox(
+                      MyFiles(),
+                      SizedBox(
                         height: defaultPadding,
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(defaultPadding),
-                        decoration: const BoxDecoration(
-                          color: secondaryColor,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: Text(
-                          "Recent Files",
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                      )
+                      RecentFiles(),
                     ],
                   ),
                 ),
