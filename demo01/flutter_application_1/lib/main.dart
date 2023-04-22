@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/screens/main/main_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'controllers/MenuAppController.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +31,14 @@ class MyApp extends StatelessWidget {
         ),
         canvasColor: secondaryColor,
       ),
-      home: const MainScreen(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => MenuAppController(),
+          ),
+        ],
+        child: const MainScreen(),
+      ),
     );
   }
 }

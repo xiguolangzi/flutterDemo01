@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../controllers/menu_app_controller.dart';
+import '../../controllers/MenuAppController.dart';
 import '../../responsive.dart';
 import 'main_screen/size_menu.dart';
 import 'package:flutter_application_1/screens/dashboard/dashboard_screen.dart';
@@ -11,7 +11,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: context.watch<MenuAppController>().scaffoldKey,
+      key: context.read<MenuAppController>().scaffoldKey,
       drawer: const SizeMeun(),
       body: SafeArea(
         child: Row(

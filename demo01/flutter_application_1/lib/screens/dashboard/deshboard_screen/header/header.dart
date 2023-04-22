@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../../controllers/menu_app_controller.dart';
+import '../../../../controllers/MenuAppController.dart';
 import '../../../../responsive.dart';
 import 'search_field.dart';
 import 'package:flutter_application_1/screens/dashboard/deshboard_screen/header/profile_card.dart';
@@ -14,7 +14,9 @@ class Header extends StatelessWidget {
       children: [
         if (!Responsive.isDeskTop(context))
           IconButton(
-            onPressed: Provider.of<MenuAppController>(context).controlMenu,
+            onPressed: () {
+              context.read<MenuAppController>().controlMenu();
+            },
             icon: const Icon(Icons.menu),
           ),
         if (!Responsive.isMobile(context))
