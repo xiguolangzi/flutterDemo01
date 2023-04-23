@@ -1,0 +1,7 @@
+1.在项目目录下执行
+#flutter doctor  -> 会在\项目目录\biuld\下，生成windows目录，用来储存构建文件；
+	
+2.再执行
+#flutter build <target-platform> --release
+建生成安装文件 -> \项目目录\build\windows\runner\Release\ 有.exe的执行文件
+需要将 \项目目录\build\windows\runner\Release\ 下的所有内容达成一个压缩包，才可以执行.exe文件。
