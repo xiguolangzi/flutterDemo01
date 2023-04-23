@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 import '../../../../models/MyFiles.dart';
 import '../../../../responsive.dart';
+import '../../show_dialog.dart';
 import 'file_info_card.dart';
 
 class MyFiles extends StatelessWidget {
@@ -26,7 +27,9 @@ class MyFiles extends StatelessWidget {
                   vertical: defaultPadding,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                ShowDialogDemo(context, settingContent: "添加功能 维护中");
+              },
               icon: const Icon(Icons.add),
               label: const Text("Add New"),
             ),

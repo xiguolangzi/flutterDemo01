@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../show_dialog.dart';
+
 class SearchField extends StatelessWidget {
   const SearchField({super.key});
 
@@ -17,7 +19,9 @@ class SearchField extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         suffixIcon: InkWell(
-          onTap: () {},
+          onTap: () {
+            ShowDialogDemo(context, settingContent: "查询功能 维护中");
+          },
           child: Container(
             padding: const EdgeInsets.all(defaultPadding * 0.75),
             margin: const EdgeInsets.symmetric(
@@ -31,6 +35,10 @@ class SearchField extends StatelessWidget {
           ),
         ),
       ),
+      // TextField 回车触发
+      onSubmitted: (value) {
+        ShowDialogDemo(context, settingContent: "查询功能 维护中");
+      },
     );
   }
 }

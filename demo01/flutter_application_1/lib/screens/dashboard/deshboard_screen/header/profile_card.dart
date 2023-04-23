@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
 
+import 'dropdown_menu_demo.dart';
+
 class ProfileCard extends StatelessWidget {
   const ProfileCard({super.key});
 
@@ -22,11 +24,12 @@ class ProfileCard extends StatelessWidget {
             "assets/images/profile_pic.png",
             height: 38,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-            child: Text("Yuqi Hu"),
-          ),
-          const Icon(Icons.keyboard_arrow_down)
+          // const Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+          //   child: Text("Yuqi Hu"),
+          // ),
+          // const Icon(Icons.keyboard_arrow_down)
+          const DropdownMenoDemo(),
         ],
       ),
     );

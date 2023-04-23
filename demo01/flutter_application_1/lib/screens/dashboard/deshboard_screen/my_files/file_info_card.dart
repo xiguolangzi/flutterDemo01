@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../constants.dart';
 import '../../../../models/MyFiles.dart';
+import '../../show_dialog.dart';
 
 class FileInfoCard extends StatelessWidget {
   const FileInfoCard({super.key, required this.info});
@@ -38,7 +39,10 @@ class FileInfoCard extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  ShowDialogDemo(context,
+                      settingContent: "${info.title}   维护中");
+                },
                 icon: const Icon(
                   Icons.more_vert,
                   color: Colors.white,
