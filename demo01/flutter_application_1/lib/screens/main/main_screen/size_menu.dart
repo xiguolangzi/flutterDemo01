@@ -94,6 +94,7 @@ class SizeMeun extends StatelessWidget {
                 ShowDialogDemo(context, settingContent: "Settings 界面维护中");
               },
             ),
+            ElevatedButton(onPressed: () {}, child: Text("测试"))
           ],
         ),
       ),
